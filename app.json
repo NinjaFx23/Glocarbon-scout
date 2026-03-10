@@ -1,48 +1,38 @@
-{
-  "expo": {
-    "name": "glocarbon-scout",
-    "slug": "glocarbon-scout",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "glocarbonscout",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
-      },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
-    },
-    "web": {
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
-    },
-    "plugins": [
-      "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff",
-          "dark": {
-            "backgroundColor": "#000000"
-          }
-        }
-      ]
-    ],
-    "experiments": {
-      "typedRoutes": true,
-      "reactCompiler": true
-    }
-  }
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>🌍 GloCarbon</Text>
+      <Text style={styles.subtitle}>Scout System Online</Text>
+      <Text style={styles.status}>Status: Ready for Field Mapping</Text>
+      <StatusBar style="light" />
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#121212', // Dark mode background
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 42,
+    fontWeight: 'bold',
+    color: '#00FFA3', // GC Neon Green
+    marginBottom: 10,
+  },
+  subtitle: {
+    fontSize: 20,
+    color: '#FFFFFF',
+    marginBottom: 30,
+  },
+  status: {
+    fontSize: 16,
+    color: '#A0A0A0',
+    fontStyle: 'italic',
+  }
+});
